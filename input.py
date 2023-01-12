@@ -43,3 +43,5 @@ t = 365  # number of times the interest is compounded per year
 num_years = 10
 total = principal * (1 + roi/t) ** (t * num_years)
 print(total)
+
+
