@@ -1,23 +1,28 @@
-# user defined functions
-# functions begin with the keyword def
+# This file will cover functions in python and writing reusable code
 
-def hello_world():
-    print("Hello World")
+# recursive function to calculate the factorial of a number
+# recursive functions are functions that call themselves
+def factorial(number):
+    if number == 1:
+        return 1
+    else:
+        return number * factorial(number - 1)
 
-# to call the function 
-hello_world()
+print(factorial(5))
 
-# parameters
+# default argument values
+# these allow a default value to be set for a function argument
+# when no arg is passed in
+def dog_to_human_age(dog_age=1):
+    return dog_age * 7
 
-def hello_name(name):
-    print("Hello " + name + '!')
-    
-hello_name('John')
+print(dog_to_human_age())  # no arg passed in so default value is used
+print(dog_to_human_age(5))
 
-def print_between(lower, upper):
-    for i in range(lower, upper):
-        print("The current value is: ", i)
+# it is possible to have both required arguments and default arguments
 
-print_between(1,10)
+def calculate_price(price, tax=0.08, discount=0):
+    return price - discount + (price * tax)
 
-# RETURN
+print(calculate_price(100, 10, 0.1))
+print(calculate_price(100, 10))
